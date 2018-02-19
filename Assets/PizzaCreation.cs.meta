@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 45b66e5e7abcefd4bb72fe81ca6c8117
+timeCreated: 1519072748
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pizza: {fileID: 1416681021562016, guid: bd4e6c4e6ac782d4685465c5901c40c3, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
