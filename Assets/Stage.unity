@@ -739,6 +739,8 @@ MonoBehaviour:
   speed: 7
   rotateSpeed: 7
   cam: {fileID: 2076982969}
+  pickingUp: 0
+  currentPickedup: {fileID: 0}
 --- !u!143 &786220289
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2113,7 +2115,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2076982969}
   m_LocalRotation: {x: 0.12397923, y: -0, z: -0, w: 0.99228483}
-  m_LocalPosition: {x: -0.12, y: 0.64300007, z: -2.8599997}
+  m_LocalPosition: {x: -0.12, y: 0.725, z: -2.35}
   m_LocalScale: {x: 1, y: 0.22524296, z: 1}
   m_Children: []
   m_Father: {fileID: 786220283}

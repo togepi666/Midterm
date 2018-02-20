@@ -18,7 +18,6 @@ public class PhaseChanger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(Vector3.Distance(player.transform.position, mainTable.transform.position));
 		if (Vector3.Distance(player.transform.position, mainTable.transform.position) < 5)
 		{
 			

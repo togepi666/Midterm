@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 
 public class characterMovement : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class characterMovement : MonoBehaviour
 	public float speed = 3f;
 	public float rotateSpeed = 5;
 	public GameObject cam;
+	public Boolean pickingUp;
+	public GameObject currentPickedup;
 	void Start()
 	{
 		
@@ -34,6 +37,40 @@ public class characterMovement : MonoBehaviour
 		transform.Rotate(0, horizontal, 0);
 		cam.transform.Rotate(-vertical,0,0);
 		//GetComponent<CharacterController>().Move(v3.normalized * speed * Time.deltaTime);
+		RaycastHit hit;
 
+		
+
+		
+
+		if (Input.GetMouseButtonDown(0))
+		{
+			if (pickingUp)
+			{
+				Debug.Log("Detached pizza");
+				currentPickedup.transform.SetParent(null);
+				currentPickedup.GetComponent<Rigidbody>().isKinematic = false;
+				currentPickedup = null;
+				pickingUp = false;
+			}
+			else
+			{
+				if (Physics.Raycast(cam.transform.position,cam.transform.forward, out hit,6))
+				{
+					if (hit.collider.gameObject.CompareTag("Pizza") )
+					{
+						Debug.Log("Picked UP");
+						currentPickedup = hit.collider.gameObject;
+						currentPickedup.GetComponent<Rigidbody>().isKinematic = true;
+
+						hit.collider.gameObject.transform.SetParent(cam.transform);
+						pickingUp = true;
+					}
+				}
+			}
+		}
+
+		
 	}
+
 }

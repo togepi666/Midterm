@@ -22,7 +22,7 @@ public class PizzaCreation : MonoBehaviour
 	
 	public void CreatePlainPizza()
 	{
-		Instantiate(pizza, new Vector3(26.5f,5f,18f),Quaternion.EulerAngles(-90,0,0));
+		Instantiate(pizza, new Vector3(26.5f,4.5f,18f),Quaternion.identity);
 		gameObject.SetActive(false);
 		phases.GetComponent<PhaseChanger>().inMode = false;
 		Cursor.lockState = CursorLockMode.Locked;
