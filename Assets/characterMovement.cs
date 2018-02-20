@@ -23,6 +23,7 @@ public class characterMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		Debug.Log(currentPickedup);
 		Cursor.SetCursor(null,new Vector3(0,0,0),CursorMode.Auto);
 		Cursor.lockState = CursorLockMode.Locked;
 		Vector3 v3 = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
@@ -62,8 +63,7 @@ public class characterMovement : MonoBehaviour
 						Debug.Log("Picked UP");
 						currentPickedup = hit.collider.gameObject;
 						currentPickedup.GetComponent<Rigidbody>().isKinematic = true;
-
-						hit.collider.gameObject.transform.SetParent(cam.transform);
+						hit.collider.gameObject.transform.SetParent(transform);
 						pickingUp = true;
 					}
 				}

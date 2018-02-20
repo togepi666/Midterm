@@ -17,6 +17,8 @@
             </e>
           </e>
         </e>
+        <e p="ToppingsScript.cs" t="Include" />
+        <e p="UsingOven.cs" t="Include" />
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="Midterm.sln" t="IncludeFlat" />
