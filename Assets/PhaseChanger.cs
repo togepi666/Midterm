@@ -23,6 +23,9 @@ public class PhaseChanger : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+	    if(inMode){
+	        player.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+	    }
 		pressSpace.gameObject.SetActive(false);
 		
 		if (Vector3.Distance(player.transform.position, cuttingTable.transform.position) < 5)
