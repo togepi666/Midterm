@@ -10,19 +10,20 @@ public class Orders : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject order;
-	public int x = 0;
+	public int x = 1900;
 	public bool[] toppings = new bool[5];
 	public int orderNumber = 0;
+	public AudioSource printingNoise;
 	void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (x == 500)
+		if (x == 2000)
 		{
 			newOrder();
-			Debug.Log("Should have crated reciept");
+			x = 0;
 		}
 
 		x++;
@@ -30,6 +31,7 @@ public class Orders : MonoBehaviour {
 
 	public void newOrder()
 	{
+		printingNoise.Play();
 		orderNumber++;
 		
 		GameObject theOrder = Instantiate(order, transform.position + new Vector3(0,.2f,0), Quaternion.identity);
