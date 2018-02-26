@@ -9,6 +9,8 @@ public class ToppingsScript : MonoBehaviour
 	public GameObject pepperonis;
 
 	public GameObject cheeses;
+
+	public GameObject mushrooms;
 	// Use this for initialization
 	void Start () {
 		
@@ -36,5 +38,14 @@ public class ToppingsScript : MonoBehaviour
 		cheese.transform.Translate(new Vector3(0,.24f,0));
 		cheese.transform.SetParent(pickedUp.transform);
 		pickedUp.GetComponent<ManipulatePizza>().hasCheese = true;
+	}
+	public void addMushrooms()
+	{
+		GameObject pickedUp = GetComponent<characterMovement>().currentPickedup;
+		GameObject mushroom = Instantiate(mushrooms, new Vector3(0, 1, 0), Quaternion.identity);
+		mushroom.transform.position = pickedUp.transform.position;
+		mushroom.transform.Translate(new Vector3(0,.24f,0));
+		mushroom.transform.SetParent(pickedUp.transform);
+		pickedUp.GetComponent<ManipulatePizza>().hasMushrooms = true;
 	}
 }

@@ -13,6 +13,7 @@ public class PhaseChanger : MonoBehaviour {
 	public Button pizzaMaker;
 	public Button addPepperoni;
 	public Button addCheese;
+	public Button addMushroom;
 	public bool inMode = false;
 	public Button TurnOnOven;
 	public Text pressSpace;
@@ -68,6 +69,7 @@ public class PhaseChanger : MonoBehaviour {
 					player.GetComponent<characterMovement>().enabled = false;
 					addPepperoni.gameObject.SetActive(true);
 					addCheese.gameObject.SetActive(true);
+					addMushroom.gameObject.SetActive(true);
 
 					inMode = true;
 				}
@@ -77,6 +79,7 @@ public class PhaseChanger : MonoBehaviour {
 					player.GetComponent<characterMovement>().enabled = true;
 					addPepperoni.gameObject.SetActive(false);
 					addCheese.gameObject.SetActive(false);
+					addMushroom.gameObject.SetActive(false);
 
 					inMode = false;
 				}
