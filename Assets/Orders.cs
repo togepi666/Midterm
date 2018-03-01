@@ -14,6 +14,7 @@ public class Orders : MonoBehaviour {
 	public bool[] toppings = new bool[5];
 	public int orderNumber = 0;
 	public AudioSource printingNoise;
+	public GameObject customer;
 	void Start () {
 		
 	}
@@ -25,7 +26,6 @@ public class Orders : MonoBehaviour {
 			newOrder();
 			x = 0;
 		}
-
 		x++;
 	}
 
@@ -44,18 +44,20 @@ public class Orders : MonoBehaviour {
 			{
 				case 1:
 					directions = directions.Insert(directions.Length, "Pepperoni \n");
+					theOrder.GetComponent<orderProperties>().reqPepperoni = true;
 					break;
 				case 2:
 					directions = directions.Insert(directions.Length, "Cheese \n");
+					theOrder.GetComponent<orderProperties>().reqCheese = true;
 					break;
 				case 3:
 					directions = directions.Insert(directions.Length, "Mushrooms \n");
+					theOrder.GetComponent<orderProperties>().reqMushrooms = true;
 					break;
 			}
 		}
 		theOrder.transform.GetChild(0).GetComponent<TextMesh>().text = directions;
-
-		
-		
 	}
+
+	
 }

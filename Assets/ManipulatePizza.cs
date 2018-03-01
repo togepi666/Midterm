@@ -11,6 +11,7 @@ public class ManipulatePizza : MonoBehaviour
 	public bool hasMushrooms;
 	public bool hasOnions;
 	public bool hasCheese;
+	public bool isCooked;
 	public float startingZ;
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,7 @@ public class ManipulatePizza : MonoBehaviour
 		if (inOven)
 		{
 			transform.position = Vector3.MoveTowards(transform.position,transform.position - new Vector3(0, 0, 10f),.5f);
+			isCooked = true;
 			if (transform.position.z < startingZ - 9.5f)
 			{
 				inOven = false;

@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="characterMovement.cs" t="Include" />
         <e p="ManipulatePizza.cs" t="Include" />
+        <e p="orderProperties.cs" t="Include" />
         <e p="Orders.cs" t="Include" />
         <e p="PhaseChanger.cs" t="Include" />
         <e p="PizzaCreation.cs" t="Include" />

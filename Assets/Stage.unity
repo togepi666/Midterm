@@ -1632,6 +1632,48 @@ MonoBehaviour:
   inMode: 0
   TurnOnOven: {fileID: 799912385}
   pressSpace: {fileID: 929127464}
+--- !u!1001 &893032432
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4623766707838972, guid: 6dcbf7adfc439b74a848b9fb417f94dd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -16.299774
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623766707838972, guid: 6dcbf7adfc439b74a848b9fb417f94dd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.6858063
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623766707838972, guid: 6dcbf7adfc439b74a848b9fb417f94dd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -8.633453
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623766707838972, guid: 6dcbf7adfc439b74a848b9fb417f94dd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623766707838972, guid: 6dcbf7adfc439b74a848b9fb417f94dd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623766707838972, guid: 6dcbf7adfc439b74a848b9fb417f94dd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623766707838972, guid: 6dcbf7adfc439b74a848b9fb417f94dd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623766707838972, guid: 6dcbf7adfc439b74a848b9fb417f94dd, type: 2}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6dcbf7adfc439b74a848b9fb417f94dd, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &929127463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,6 +2031,7 @@ MonoBehaviour:
   toppings: 0000000000
   orderNumber: 0
   printingNoise: {fileID: 95632631}
+  customer: {fileID: 0}
 --- !u!1 &1073921310
 GameObject:
   m_ObjectHideFlags: 0
