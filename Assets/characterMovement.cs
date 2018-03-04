@@ -15,6 +15,7 @@ public class characterMovement : MonoBehaviour
 	public GameObject cam;
 	public Boolean pickingUp;
 	public GameObject currentPickedup;
+	public int points;
 	void Start()
 	{
 		

@@ -124,4 +124,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inOven: 0
+  hasPepperoni: 0
+  hasMushrooms: 0
+  hasOnions: 0
+  hasCheese: 0
+  isCooked: 0
+  pepperoniCount: 0
+  mushroomCount: 0
+  cheeseCount: 0
   startingZ: 0
+  currentlyInOven: 0
+  waitingTable: {fileID: 0}

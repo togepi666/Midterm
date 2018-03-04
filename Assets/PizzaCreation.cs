@@ -7,12 +7,6 @@ public class PizzaCreation : MonoBehaviour
 {
 
 	public GameObject pizza;
-
-	public GameObject phases;
-
-	public GameObject childButton;
-
-	public GameObject pepperonis;
 	// Use this for initialization
 	void Start () {
 		
@@ -23,15 +17,17 @@ public class PizzaCreation : MonoBehaviour
 	{
 
 	}
-	
-	public void CreatePlainPizza()
+
+	public void CreatePlainPizza( GameObject y)
 	{
-		GameObject Bizza = Instantiate(pizza, new Vector3(39.5f,4.85f,18f),Quaternion.identity);
-		childButton.gameObject.SetActive(false);
-		phases.GetComponent<PhaseChanger>().inMode = false;
-		Cursor.lockState = CursorLockMode.Locked;
-		phases.GetComponent<PhaseChanger>().player.GetComponent<characterMovement>().enabled = true;
-		
+		Debug.Log("CREATED PIZZA");
+		GameObject Bizza = Instantiate(pizza, new Vector3(0,0,0),Quaternion.identity);
+		Bizza.transform.position = y.transform.position;
+		Bizza.transform.Translate(0,1.5f,3f);
+		y.GetComponent<characterMovement>().currentPickedup = Bizza;
+		Bizza.transform.SetParent(y.transform);
+		y.GetComponent<characterMovement>().currentPickedup.GetComponent<Rigidbody>().isKinematic = true;
+
 	}
 
 	

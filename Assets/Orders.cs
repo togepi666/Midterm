@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
@@ -11,17 +12,17 @@ public class Orders : MonoBehaviour {
 	// Use this for initialization
 	public GameObject order;
 	public int x = 1900;
-	public bool[] toppings = new bool[5];
 	public int orderNumber = 0;
 	public AudioSource printingNoise;
 	public GameObject customer;
+	public GameObject[] tables = new GameObject[8];
 	void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (x == 2000)
+		if (x == 500)
 		{
 			newOrder();
 			x = 0;
@@ -31,11 +32,12 @@ public class Orders : MonoBehaviour {
 
 	public void newOrder()
 	{
-		printingNoise.Play();
-		orderNumber++;
 		
+		printingNoise.Play();
+		GameObject correspondingCustomer = Instantiate(customer, tables[orderNumber].transform.position + Vector3.forward, Quaternion.identity);
 		GameObject theOrder = Instantiate(order, transform.position + new Vector3(0,.2f,0), Quaternion.identity);
-		String directions = "# " + orderNumber +"\n";
+		String directions = "# " + orderNumber+1 +"\n";
+		theOrder.GetComponent<orderProperties>().location = tables[orderNumber].transform.position;
 		
 		for (int i = 0; i < 3; i++)
 		{
@@ -56,8 +58,8 @@ public class Orders : MonoBehaviour {
 					break;
 			}
 		}
+		orderNumber++;
 		theOrder.transform.GetChild(0).GetComponent<TextMesh>().text = directions;
 	}
 
-	
 }

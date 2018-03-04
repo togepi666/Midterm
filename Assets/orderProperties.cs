@@ -14,14 +14,37 @@ public class orderProperties : MonoBehaviour
 	public bool reqCheese;
 
 	public bool reqMushrooms;
+
+	public int pepCount;
+
+	public int mushCount;
+
+	public int cheCount;
+
+	public GameObject player;
 	// Use this for initialization
 	void Start () {
-		
+	player  = GameObject.Find("Player");	
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update()
+	{
+		if (Vector3.Distance(player.transform.position, location) < 5)
+		{
+			if (player.GetComponent<characterMovement>().currentPickedup != null)
+			{
+				if (Input.GetKeyDown(KeyCode.Space))
+				{
+					GameObject setPizza = player.GetComponent<characterMovement>().currentPickedup;
+					player.GetComponent<characterMovement>().currentPickedup.transform.parent = null;
+					player.GetComponent<characterMovement>().currentPickedup = null;
+					setPizza.transform.position = location + Vector3.up / 2;
+
+
+				}
+			}
+		}
 	}
-	
+
 }

@@ -27,8 +27,6 @@ public class UsingOven : MonoBehaviour
 		pickedUp.GetComponent<ManipulatePizza>().inOven = true;
 		pickedUp.transform.SetParent(null);
 		GetComponent<characterMovement>().pickingUp = true;
-		childButton.gameObject.SetActive(false);
-		phases.GetComponent<PhaseChanger>().inMode = false;
 		Cursor.lockState = CursorLockMode.Locked;
 		phases.GetComponent<PhaseChanger>().player.GetComponent<characterMovement>().enabled = true;
 
