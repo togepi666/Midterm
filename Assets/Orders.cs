@@ -34,7 +34,7 @@ public class Orders : MonoBehaviour {
 	{
 		
 		printingNoise.Play();
-		GameObject correspondingCustomer = Instantiate(customer, tables[orderNumber].transform.position + Vector3.forward, Quaternion.identity);
+		GameObject correspondingCustomer = Instantiate(customer, tables[orderNumber].transform.position + Vector3.forward*2, Quaternion.identity);
 		GameObject theOrder = Instantiate(order, transform.position + new Vector3(0,.2f,0), Quaternion.identity);
 		String directions = "# " + orderNumber+1 +"\n";
 		theOrder.GetComponent<orderProperties>().location = tables[orderNumber].transform.position;

@@ -40,8 +40,20 @@ public class orderProperties : MonoBehaviour
 					player.GetComponent<characterMovement>().currentPickedup.transform.parent = null;
 					player.GetComponent<characterMovement>().currentPickedup = null;
 					setPizza.transform.position = location + Vector3.up / 2;
+					
+					if (setPizza.GetComponent<ManipulatePizza>().isCooked)
+						player.GetComponent<characterMovement>().points += 5;
+					
+					if (setPizza.GetComponent<ManipulatePizza>().pepperoniCount == pepCount)
+						player.GetComponent<characterMovement>().points += (5 * pepCount);
 
+					if (setPizza.GetComponent<ManipulatePizza>().cheeseCount == cheCount)
+						player.GetComponent<characterMovement>().points += (5 * cheCount);
+					
+					if (setPizza.GetComponent<ManipulatePizza>().mushroomCount == mushCount)
+						player.GetComponent<characterMovement>().points += (5 * mushCount);
 
+					
 				}
 			}
 		}

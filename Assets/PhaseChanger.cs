@@ -21,6 +21,7 @@ public class PhaseChanger : MonoBehaviour {
 
 	public GameObject waitingTable;
 	public GameObject[] tables = new GameObject[8];
+	public float 
 	// Use this for initialization
 	void Start () {
 

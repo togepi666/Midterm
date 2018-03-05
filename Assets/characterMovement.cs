@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
+using UnityEngine.UI;
 
 public class characterMovement : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class characterMovement : MonoBehaviour
 	public Boolean pickingUp;
 	public GameObject currentPickedup;
 	public int points;
+	public Text pointDisplay;
 	void Start()
 	{
 		
@@ -24,6 +27,8 @@ public class characterMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		pointDisplay.text = "Pts " + points; 
+
 		Debug.Log(currentPickedup);
 		Cursor.SetCursor(null,new Vector3(0,0,0),CursorMode.Auto);
 		Cursor.lockState = CursorLockMode.Locked;
