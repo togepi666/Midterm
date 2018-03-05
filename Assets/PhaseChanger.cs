@@ -21,15 +21,21 @@ public class PhaseChanger : MonoBehaviour {
 
 	public GameObject waitingTable;
 	public GameObject[] tables = new GameObject[8];
-	public float 
-	// Use this for initialization
-	void Start () {
 
-}
+	public float timeLeft;
+
+	public Text timeRemanining;
+	// Use this for initialization
+	void Start ()
+	{
+		timeLeft = 400;
+	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		timeRemanining.text = ""+timeLeft;
+		timeLeft -= Time.deltaTime;
 		pressSpace.gameObject.SetActive(false);	
 
 		if (Vector3.Distance(player.transform.position, pizzaTable.transform.position) < 5)
