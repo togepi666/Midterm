@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Runtime.Remoting.Contexts;
 using UnityEditor;
+using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
+using UnityEngine.Analytics;
+using UnityEngine.Experimental.UIElements;
 using UnityEngine.UI;
 
 public class PhaseChanger : MonoBehaviour {
@@ -25,86 +28,123 @@ public class PhaseChanger : MonoBehaviour {
 	public float timeLeft;
 
 	public Text timeRemanining;
+
+	public Text ending;
+
+	public GameObject panel;
 	// Use this for initialization
 	void Start ()
 	{
-		timeLeft = 400;
+		timeLeft = 20;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		timeRemanining.text = ""+timeLeft;
-		timeLeft -= Time.deltaTime;
-		pressSpace.gameObject.SetActive(false);	
-
-		if (Vector3.Distance(player.transform.position, pizzaTable.transform.position) < 5)
+		if (timeLeft <= 0)
 		{
-			pressSpace.gameObject.SetActive(true);
+			gameEnd();
+			player.GetComponent<characterMovement>().enabled = false;
+			Time.timeScale = 0;
 			if (Input.GetKeyDown(KeyCode.Space))
-			{
-				if ( player.GetComponent<characterMovement>().currentPickedup == null)
-				{
-					pizzaTable.GetComponent<PizzaCreation>().CreatePlainPizza(player.gameObject);
-				}
-			}
-		}
+				Application.LoadLevel(Application.loadedLevel);
 
-		if (Vector3.Distance(player.transform.position, oven.transform.position) < 15)
-		{
-			if (player.GetComponent<characterMovement>().currentPickedup != null)
-			{
-				if (Input.GetKeyDown(KeyCode.Space))
-				{
-					Debug.Log("Should be moving");
-					player.GetComponent<characterMovement>().currentPickedup.transform.parent = null;
-					player.GetComponent<characterMovement>().currentPickedup.GetComponent<ManipulatePizza>().inOven = true;
-					player.GetComponent<characterMovement>().currentPickedup = null;
-				}
-			}
 		}
-		if (Vector3.Distance(player.transform.position, pepperoniTable.transform.position) < 5)
+		else
 		{
-			if (player.GetComponent<characterMovement>().currentPickedup != null)
-			{
-				if (Input.GetKeyDown(KeyCode.Space))
-				{
-					toppingsHandler.GetComponent<ToppingsScript>().addPepperoni();
-				}
-			}
-		}
-		if (Vector3.Distance(player.transform.position, mushroomTable.transform.position) < 5)
-		{
-			if (player.GetComponent<characterMovement>().currentPickedup != null)
-			{
-				if (Input.GetKeyDown(KeyCode.Space))
-				{
-					toppingsHandler.GetComponent<ToppingsScript>().addMushrooms();
-				}
-			}
-		}
-		if (Vector3.Distance(player.transform.position, cheeseTable.transform.position) < 5)
-		{
-			if (player.GetComponent<characterMovement>().currentPickedup != null)
-			{
-				if (Input.GetKeyDown(KeyCode.Space))
-				{
-					toppingsHandler.GetComponent<ToppingsScript>().addCheese();
-				}
-			}
-		}
+			timeRemanining.text = "" + timeLeft;
+			timeLeft -= Time.deltaTime;
+			pressSpace.gameObject.SetActive(false);
 
-		if (Vector3.Distance(player.transform.position, waitingTable.transform.position) < 5)
-		{
-			if (player.GetComponent<characterMovement>().currentPickedup == null)
+
+			if (Vector3.Distance(player.transform.position, pizzaTable.transform.position) < 5)
 			{
+				pressSpace.gameObject.SetActive(true);
 				if (Input.GetKeyDown(KeyCode.Space))
 				{
-					waitingTable.GetComponent<isFull>().pickUpPizza();
-					player.GetComponent<characterMovement>().pickingUp = false;
+					if (player.GetComponent<characterMovement>().currentPickedup == null)
+					{
+						pizzaTable.GetComponent<PizzaCreation>().CreatePlainPizza(player.gameObject);
+					}
 				}
 			}
+
+			if (Vector3.Distance(player.transform.position, oven.transform.position) < 15)
+			{
+				if (player.GetComponent<characterMovement>().currentPickedup != null)
+				{
+					if (Input.GetKeyDown(KeyCode.Space))
+					{
+						Debug.Log("Should be moving");
+						player.GetComponent<characterMovement>().currentPickedup.transform.parent = null;
+						player.GetComponent<characterMovement>().currentPickedup.GetComponent<ManipulatePizza>().inOven = true;
+						player.GetComponent<characterMovement>().currentPickedup = null;
+					}
+				}
+			}
+
+			if (Vector3.Distance(player.transform.position, pepperoniTable.transform.position) < 5)
+			{
+				if (player.GetComponent<characterMovement>().currentPickedup != null)
+				{
+					if (Input.GetKeyDown(KeyCode.Space))
+					{
+						toppingsHandler.GetComponent<ToppingsScript>().addPepperoni();
+					}
+				}
+			}
+
+			if (Vector3.Distance(player.transform.position, mushroomTable.transform.position) < 5)
+			{
+				if (player.GetComponent<characterMovement>().currentPickedup != null)
+				{
+					if (Input.GetKeyDown(KeyCode.Space))
+					{
+						toppingsHandler.GetComponent<ToppingsScript>().addMushrooms();
+					}
+				}
+			}
+
+			if (Vector3.Distance(player.transform.position, cheeseTable.transform.position) < 5)
+			{
+				if (player.GetComponent<characterMovement>().currentPickedup != null)
+				{
+					if (Input.GetKeyDown(KeyCode.Space))
+					{
+						toppingsHandler.GetComponent<ToppingsScript>().addCheese();
+					}
+				}
+			}
+
+			if (Vector3.Distance(player.transform.position, waitingTable.transform.position) < 5)
+			{
+				if (player.GetComponent<characterMovement>().currentPickedup == null)
+				{
+					if (Input.GetKeyDown(KeyCode.Space))
+					{
+						waitingTable.GetComponent<isFull>().pickUpPizza();
+						player.GetComponent<characterMovement>().pickingUp = false;
+					}
+				}
+			}
+		}
+	}
+
+	public void gameEnd()
+	{
+		panel.gameObject.SetActive(true);
+		if (player.GetComponent<characterMovement>().points > 50)
+		{
+			ending.text = "Congratulations, You will not be fired today.\n" +
+			              "Press Space to restart.";
+			
+		}
+		else
+		{
+			ending.text = "You did so bad, you're fired.\n" +
+			              "Press Space to restart.";
 		}
 		
 	}
+	
 }

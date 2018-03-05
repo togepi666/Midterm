@@ -24,8 +24,11 @@ public class Orders : MonoBehaviour {
 	void Update () {
 		if (x == 500)
 		{
-			newOrder();
-			x = 0;
+			if (orderNumber < 8)
+			{
+				newOrder();
+				x = 0;
+			}
 		}
 		x++;
 	}
@@ -47,14 +50,19 @@ public class Orders : MonoBehaviour {
 				case 1:
 					directions = directions.Insert(directions.Length, "Pepperoni \n");
 					theOrder.GetComponent<orderProperties>().reqPepperoni = true;
+					theOrder.GetComponent<orderProperties>().pepCount++;
 					break;
 				case 2:
 					directions = directions.Insert(directions.Length, "Cheese \n");
 					theOrder.GetComponent<orderProperties>().reqCheese = true;
+					theOrder.GetComponent<orderProperties>().cheCount++;
+
 					break;
 				case 3:
 					directions = directions.Insert(directions.Length, "Mushrooms \n");
 					theOrder.GetComponent<orderProperties>().reqMushrooms = true;
+					theOrder.GetComponent<orderProperties>().mushCount++;
+
 					break;
 			}
 		}

@@ -45,7 +45,7 @@ public class orderProperties : MonoBehaviour
 						player.GetComponent<characterMovement>().points += 5;
 					
 					if (setPizza.GetComponent<ManipulatePizza>().pepperoniCount == pepCount)
-						player.GetComponent<characterMovement>().points += (5 * pepCount);
+						player.GetComponent<characterMovement>().points+= (5 * pepCount);
 
 					if (setPizza.GetComponent<ManipulatePizza>().cheeseCount == cheCount)
 						player.GetComponent<characterMovement>().points += (5 * cheCount);

@@ -34,7 +34,7 @@ public class ManipulatePizza : MonoBehaviour
 		{
 			if (waitingTable.GetComponent<isFull>().isfull== false)
 			{
-				transform.position = Vector3.MoveTowards(transform.position, transform.position - new Vector3(0, 0, 10f), .02f);
+				transform.position = Vector3.MoveTowards(transform.position, transform.position - new Vector3(0, 0, 10f), .04f);
 				isCooked = true;
 			}
 

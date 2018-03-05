@@ -9,47 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1967624283709668}
+  m_RootGameObject: {fileID: 1045808791441500}
   m_IsPrefabParent: 1
---- !u!1 &1967624283709668
+--- !u!1 &1045808791441500
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4405795537857148}
-  - component: {fileID: 33318685956194104}
-  - component: {fileID: 23107217397044710}
-  - component: {fileID: 95384453459078962}
-  - component: {fileID: 65222830828471676}
-  - component: {fileID: 114520137581164980}
+  - component: {fileID: 4426818943934528}
+  - component: {fileID: 33981678927455882}
+  - component: {fileID: 23507419324015164}
+  - component: {fileID: 95480222303675268}
+  - component: {fileID: 64922055694469148}
   m_Layer: 0
-  m_Name: Pizza
+  m_Name: cheeseTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4405795537857148
+--- !u!4 &4426818943934528
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1967624283709668}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.15443, y: 0.8953379, z: 0.045284748}
-  m_LocalScale: {x: 1.5647157, y: 0.044764154, z: 1.5647157}
+  m_GameObject: {fileID: 1045808791441500}
+  m_LocalRotation: {x: 0, y: -0.86596906, z: -0, w: 0.5000977}
+  m_LocalPosition: {x: 17.612, y: 2.61, z: 18.141}
+  m_LocalScale: {x: 3.0137227, y: 3.0137227, z: 3.0137227}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23107217397044710
+  m_LocalEulerAnglesHint: {x: 0, y: -119.98701, z: 0}
+--- !u!23 &23507419324015164
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1967624283709668}
+  m_GameObject: {fileID: 1045808791441500}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,8 +57,10 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9251bfe173f26c347afbbcea2742d289, type: 3}
-  - {fileID: 2100002, guid: 9251bfe173f26c347afbbcea2742d289, type: 3}
+  - {fileID: 2100000, guid: 9e28c652045b906429c49dffda8c0bf9, type: 3}
+  - {fileID: 2100002, guid: 9e28c652045b906429c49dffda8c0bf9, type: 3}
+  - {fileID: 2100004, guid: 9e28c652045b906429c49dffda8c0bf9, type: 3}
+  - {fileID: 2100006, guid: 9e28c652045b906429c49dffda8c0bf9, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,34 +80,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33318685956194104
+--- !u!33 &33981678927455882
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1967624283709668}
-  m_Mesh: {fileID: 4300000, guid: 9251bfe173f26c347afbbcea2742d289, type: 3}
---- !u!65 &65222830828471676
-BoxCollider:
+  m_GameObject: {fileID: 1045808791441500}
+  m_Mesh: {fileID: 4300000, guid: 9e28c652045b906429c49dffda8c0bf9, type: 3}
+--- !u!64 &64922055694469148
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1967624283709668}
+  m_GameObject: {fileID: 1045808791441500}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9978762, y: 2.820365, z: 1.9978765}
-  m_Center: {x: 0.00000011920928, y: 0.39736626, z: -0.00000017881392}
---- !u!95 &95384453459078962
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 9e28c652045b906429c49dffda8c0bf9, type: 3}
+--- !u!95 &95480222303675268
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1967624283709668}
+  m_GameObject: {fileID: 1045808791441500}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9251bfe173f26c347afbbcea2742d289, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 9e28c652045b906429c49dffda8c0bf9, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -115,26 +118,3 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114520137581164980
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1967624283709668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4509682621a83c4ea3c23e286fa4079, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inOven: 0
-  hasPepperoni: 0
-  hasMushrooms: 0
-  hasOnions: 0
-  hasCheese: 0
-  isCooked: 0
-  pepperoniCount: 0
-  mushroomCount: 0
-  cheeseCount: 0
-  startingZ: 0
-  currentlyInOven: 0
-  waitingTable: {fileID: 0}
