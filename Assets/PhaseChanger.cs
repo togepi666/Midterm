@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Remoting.Contexts;
-using UnityEditor;
-using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.Experimental.UIElements;
@@ -35,7 +33,7 @@ public class PhaseChanger : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		timeLeft = 20;
+		timeLeft = 150;
 	}
 	
 	// Update is called once per frame
@@ -47,7 +45,11 @@ public class PhaseChanger : MonoBehaviour {
 			player.GetComponent<characterMovement>().enabled = false;
 			Time.timeScale = 0;
 			if (Input.GetKeyDown(KeyCode.Space))
+			{
 				Application.LoadLevel(Application.loadedLevel);
+				Time.timeScale = 1;
+				player.GetComponent<characterMovement>().enabled = true;
+			}
 
 		}
 		else
@@ -69,10 +71,12 @@ public class PhaseChanger : MonoBehaviour {
 				}
 			}
 
-			if (Vector3.Distance(player.transform.position, oven.transform.position) < 15)
+			if (Vector3.Distance(player.transform.position, oven.transform.position) < 4)
 			{
 				if (player.GetComponent<characterMovement>().currentPickedup != null)
 				{
+					pressSpace.gameObject.SetActive(true);
+
 					if (Input.GetKeyDown(KeyCode.Space))
 					{
 						Debug.Log("Should be moving");
@@ -83,10 +87,12 @@ public class PhaseChanger : MonoBehaviour {
 				}
 			}
 
-			if (Vector3.Distance(player.transform.position, pepperoniTable.transform.position) < 5)
+			if (Vector3.Distance(player.transform.position, pepperoniTable.transform.position) < 3)
 			{
 				if (player.GetComponent<characterMovement>().currentPickedup != null)
 				{
+					pressSpace.gameObject.SetActive(true);
+
 					if (Input.GetKeyDown(KeyCode.Space))
 					{
 						toppingsHandler.GetComponent<ToppingsScript>().addPepperoni();
@@ -94,10 +100,11 @@ public class PhaseChanger : MonoBehaviour {
 				}
 			}
 
-			if (Vector3.Distance(player.transform.position, mushroomTable.transform.position) < 5)
+			if (Vector3.Distance(player.transform.position, mushroomTable.transform.position) < 3)
 			{
 				if (player.GetComponent<characterMovement>().currentPickedup != null)
-				{
+				{				pressSpace.gameObject.SetActive(true);
+
 					if (Input.GetKeyDown(KeyCode.Space))
 					{
 						toppingsHandler.GetComponent<ToppingsScript>().addMushrooms();
@@ -105,10 +112,12 @@ public class PhaseChanger : MonoBehaviour {
 				}
 			}
 
-			if (Vector3.Distance(player.transform.position, cheeseTable.transform.position) < 5)
+			if (Vector3.Distance(player.transform.position, cheeseTable.transform.position) < 3)
 			{
 				if (player.GetComponent<characterMovement>().currentPickedup != null)
 				{
+					pressSpace.gameObject.SetActive(true);
+
 					if (Input.GetKeyDown(KeyCode.Space))
 					{
 						toppingsHandler.GetComponent<ToppingsScript>().addCheese();
@@ -120,6 +129,8 @@ public class PhaseChanger : MonoBehaviour {
 			{
 				if (player.GetComponent<characterMovement>().currentPickedup == null)
 				{
+					pressSpace.gameObject.SetActive(true);
+
 					if (Input.GetKeyDown(KeyCode.Space))
 					{
 						waitingTable.GetComponent<isFull>().pickUpPizza();

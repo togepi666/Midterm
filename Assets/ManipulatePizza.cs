@@ -38,7 +38,7 @@ public class ManipulatePizza : MonoBehaviour
 				isCooked = true;
 			}
 
-			if (transform.position.z < startingZ - 15.5f)
+			if (transform.position.z < startingZ - 22.5f)
 			{
 				inOven = false;
 				waitingTable.GetComponent<isFull>().isfull = true;

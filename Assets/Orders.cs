@@ -11,7 +11,7 @@ public class Orders : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject order;
-	public int x = 1900;
+	public int x = 500;
 	public int orderNumber = 0;
 	public AudioSource printingNoise;
 	public GameObject customer;
@@ -22,7 +22,7 @@ public class Orders : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (x == 500)
+		if (x == 1000)
 		{
 			if (orderNumber < 8)
 			{
