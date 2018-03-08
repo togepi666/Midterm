@@ -11,7 +11,7 @@ public class Orders : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject order;
-	public int x = 500;
+	public int x = 750;
 	public int orderNumber = 0;
 	public AudioSource printingNoise;
 	public GameObject customer;
@@ -21,7 +21,11 @@ public class Orders : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update()
+	{
+		if (Time.timeScale != 0)
+		{
+
 		if (x == 1000)
 		{
 			if (orderNumber < 8)
@@ -30,8 +34,10 @@ public class Orders : MonoBehaviour {
 				x = 0;
 			}
 		}
+
 		x++;
 	}
+}
 
 	public void newOrder()
 	{
@@ -39,7 +45,7 @@ public class Orders : MonoBehaviour {
 		printingNoise.Play();
 		GameObject correspondingCustomer = Instantiate(customer, tables[orderNumber].transform.position + Vector3.forward*2, Quaternion.identity);
 		GameObject theOrder = Instantiate(order, transform.position + new Vector3(0,.2f,0), Quaternion.identity);
-		String directions = "# " + orderNumber+1 +"\n";
+		String directions = "# " + (orderNumber+1) +"\n";
 		theOrder.GetComponent<orderProperties>().location = tables[orderNumber].transform.position;
 		
 		for (int i = 0; i < 3; i++)

@@ -1,22 +1,38 @@
 fileFormatVersion: 2
-guid: 1c6117405555c9a47881f609311407f0
-timeCreated: 1520498083
+guid: 3e46094b055a3b44f9129e0d8d815555
+timeCreated: 1520495385
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert2
-    2100002: Shirt
-    2100004: feeet
-    2100006: Hair
-    2100008: Skin
-    2100010: lambert1
-    2100012: FAcy
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pCube1
+    100000: pCylinder1
+    100002: pCylinder2
+    100004: pCylinder3
+    100006: pCylinder4
+    100008: pCylinder5
+    100010: //RootNode
+    400000: pCylinder1
+    400002: pCylinder2
+    400004: pCylinder3
+    400006: pCylinder4
+    400008: pCylinder5
+    400010: //RootNode
+    2100000: Pep
+    2300000: pCylinder1
+    2300002: pCylinder2
+    2300004: pCylinder3
+    2300006: pCylinder4
+    2300008: pCylinder5
+    3300000: pCylinder1
+    3300002: pCylinder2
+    3300004: pCylinder3
+    3300006: pCylinder4
+    3300008: pCylinder5
+    4300000: pCylinder1
+    4300002: pCylinder2
+    4300004: pCylinder3
+    4300006: pCylinder4
+    4300008: pCylinder5
     9500000: //RootNode
   externalObjects: {}
   materials:

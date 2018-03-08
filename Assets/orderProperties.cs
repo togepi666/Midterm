@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class orderProperties : MonoBehaviour
 {
@@ -24,7 +26,7 @@ public class orderProperties : MonoBehaviour
 	public GameObject player;
 	// Use this for initialization
 	void Start () {
-	player  = GameObject.Find("Player");	
+	player  = GameObject.Find("Player");
 	}
 	
 	// Update is called once per frame
@@ -32,10 +34,12 @@ public class orderProperties : MonoBehaviour
 	{
 		if (Vector3.Distance(player.transform.position, location) < 5)
 		{
+			
 			if (player.GetComponent<characterMovement>().currentPickedup != null)
 			{
 				if (Input.GetKeyDown(KeyCode.Space))
 				{
+					player.GetComponent<characterMovement>().yummy.Play();
 					GameObject setPizza = player.GetComponent<characterMovement>().currentPickedup;
 					player.GetComponent<characterMovement>().currentPickedup.transform.parent = null;
 					player.GetComponent<characterMovement>().currentPickedup = null;

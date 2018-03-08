@@ -1,22 +1,68 @@
 fileFormatVersion: 2
-guid: 1c6117405555c9a47881f609311407f0
-timeCreated: 1520498083
+guid: bb105c333ef2f5944ae36dcaaea56865
+timeCreated: 1520495386
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pCube1
+    100004: pCube10
+    100006: pCube11
+    100008: pCube2
+    100010: pCube3
+    100012: pCube4
+    100014: pCube5
+    100016: pCube6
+    100018: pCube7
+    100020: pCube8
+    100022: pCube9
     400000: //RootNode
-    2100000: lambert2
-    2100002: Shirt
-    2100004: feeet
-    2100006: Hair
-    2100008: Skin
-    2100010: lambert1
-    2100012: FAcy
-    2300000: //RootNode
-    3300000: //RootNode
+    400002: pCube1
+    400004: pCube10
+    400006: pCube11
+    400008: pCube2
+    400010: pCube3
+    400012: pCube4
+    400014: pCube5
+    400016: pCube6
+    400018: pCube7
+    400020: pCube8
+    400022: pCube9
+    2100000: cheeseColor
+    2300000: pCube1
+    2300002: pCube10
+    2300004: pCube11
+    2300006: pCube2
+    2300008: pCube3
+    2300010: pCube4
+    2300012: pCube5
+    2300014: pCube6
+    2300016: pCube7
+    2300018: pCube8
+    2300020: pCube9
+    3300000: pCube1
+    3300002: pCube10
+    3300004: pCube11
+    3300006: pCube2
+    3300008: pCube3
+    3300010: pCube4
+    3300012: pCube5
+    3300014: pCube6
+    3300016: pCube7
+    3300018: pCube8
+    3300020: pCube9
     4300000: pCube1
+    4300002: pCube2
+    4300004: pCube3
+    4300006: pCube4
+    4300008: pCube5
+    4300010: pCube6
+    4300012: pCube7
+    4300014: pCube8
+    4300016: pCube9
+    4300018: pCube10
+    4300020: pCube11
     9500000: //RootNode
   externalObjects: {}
   materials:

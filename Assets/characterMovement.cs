@@ -13,7 +13,7 @@ public class characterMovement : MonoBehaviour
 
 // Use this for initialization
 	public static Vector3 dir;
-	public float speed = .5f;
+	public float speed = 5f;
 	public float rotateSpeed = 4;
 	public GameObject cam;
 	public Boolean pickingUp;
@@ -21,6 +21,7 @@ public class characterMovement : MonoBehaviour
 	public int points;
 	public Text pointDisplay;
 	public float completeRot;
+	public AudioSource yummy;
 	void Start()
 	{
 		completeRot = 0;
@@ -34,11 +35,12 @@ public class characterMovement : MonoBehaviour
 		Debug.Log(currentPickedup);
 		Cursor.SetCursor(null, new Vector3(0, 0, 0), CursorMode.Auto);
 		Cursor.lockState = CursorLockMode.Locked;
-		Vector3 v3 = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
-		v3 = transform.TransformDirection(v3);
+		Vector3 v3 = new Vector3(Input.GetAxisRaw("Horizontal")* 2, 0.0f, Input.GetAxisRaw("Vertical") * 2);
+		v3 = transform.TransformDirection(v3 * 10);
+		v3 *= speed;
 		//transform.Translate(speed * v3.normalized * Time.deltaTime,Space.Self);  
 		//GetComponent<Rigidbody>().AddForce(v3.normalized);
-		GetComponent<CharacterController>().Move(v3.normalized);
+		GetComponent<CharacterController>().Move(v3.normalized * Time.deltaTime * 20 );
 		//GetComponent<CharacterController>().SimpleMove(v3.normalized * speed * Time.deltaTime);
 
 		float horizontal = Input.GetAxis("Mouse X") * rotateSpeed;

@@ -46,6 +46,7 @@ public class PhaseChanger : MonoBehaviour {
 		{
 			Time.timeScale = 0;
 			player.GetComponent<characterMovement>().enabled = false;
+			
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				Time.timeScale = 1;
@@ -86,7 +87,7 @@ public class PhaseChanger : MonoBehaviour {
 				}
 			}
 
-			if (Vector3.Distance(player.transform.position, oven.transform.position) < 4)
+			if (Vector3.Distance(player.transform.position, oven.transform.position) < 8)
 			{
 				if (player.GetComponent<characterMovement>().currentPickedup != null)
 				{
@@ -102,7 +103,7 @@ public class PhaseChanger : MonoBehaviour {
 				}
 			}
 
-			if (Vector3.Distance(player.transform.position, pepperoniTable.transform.position) < 3)
+			if (Vector3.Distance(player.transform.position, pepperoniTable.transform.position) < 4)
 			{
 				if (player.GetComponent<characterMovement>().currentPickedup != null)
 				{
@@ -115,7 +116,7 @@ public class PhaseChanger : MonoBehaviour {
 				}
 			}
 
-			if (Vector3.Distance(player.transform.position, mushroomTable.transform.position) < 3)
+			if (Vector3.Distance(player.transform.position, mushroomTable.transform.position) < 4)
 			{
 				if (player.GetComponent<characterMovement>().currentPickedup != null)
 				{				pressSpace.gameObject.SetActive(true);
@@ -127,7 +128,7 @@ public class PhaseChanger : MonoBehaviour {
 				}
 			}
 
-			if (Vector3.Distance(player.transform.position, cheeseTable.transform.position) < 3)
+			if (Vector3.Distance(player.transform.position, cheeseTable.transform.position) < 4)
 			{
 				if (player.GetComponent<characterMovement>().currentPickedup != null)
 				{

@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 1c6117405555c9a47881f609311407f0
-timeCreated: 1520498083
+guid: ce16bf88cadb42b4c8e0cd3b8af347a1
+timeCreated: 1520500520
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert2
-    2100002: Shirt
-    2100004: feeet
-    2100006: Hair
-    2100008: Skin
-    2100010: lambert1
-    2100012: FAcy
+    2100000: lambert3
+    2100002: Hair
+    2100004: Legs
+    2100006: HeadColorw
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCube1
