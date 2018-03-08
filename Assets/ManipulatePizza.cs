@@ -32,13 +32,13 @@ public class ManipulatePizza : MonoBehaviour
 		GetComponent<Rigidbody>().velocity = Vector3.zero;
 		if (inOven)
 		{
-			if (waitingTable.GetComponent<isFull>().isfull== false)
+			if (waitingTable.GetComponent<isFull>().isfull == false || transform.position.z > startingZ - 17)
 			{
 				transform.position = Vector3.MoveTowards(transform.position, transform.position - new Vector3(0, 0, 10f), .04f);
 				isCooked = true;
 			}
-
-			if (transform.position.z < startingZ - 22.5f)
+			
+		if (transform.position.z < startingZ - 22.5f)
 			{
 				inOven = false;
 				waitingTable.GetComponent<isFull>().isfull = true;

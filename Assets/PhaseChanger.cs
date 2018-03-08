@@ -30,15 +30,30 @@ public class PhaseChanger : MonoBehaviour {
 	public Text ending;
 
 	public GameObject panel;
+	public GameObject startingPanel;
+	public bool startGame = false;
 	// Use this for initialization
 	void Start ()
 	{
 		timeLeft = 150;
+		
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		if (!startGame)
+		{
+			Time.timeScale = 0;
+			player.GetComponent<characterMovement>().enabled = false;
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				Time.timeScale = 1;
+				startGame = true;
+				startingPanel.gameObject.active = false;
+				player.GetComponent<characterMovement>().enabled = true;
+			}
+		}
 		if (timeLeft <= 0)
 		{
 			gameEnd();
@@ -54,7 +69,7 @@ public class PhaseChanger : MonoBehaviour {
 		}
 		else
 		{
-			timeRemanining.text = "" + timeLeft;
+			timeRemanining.text = timeLeft.ToString("F2");
 			timeLeft -= Time.deltaTime;
 			pressSpace.gameObject.SetActive(false);
 
