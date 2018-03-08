@@ -14,7 +14,7 @@ public class characterMovement : MonoBehaviour
 // Use this for initialization
 	public static Vector3 dir;
 	public float speed = 5f;
-	public float rotateSpeed = 4;
+	public float rotateSpeed = .90f;
 	public GameObject cam;
 	public Boolean pickingUp;
 	public GameObject currentPickedup;
@@ -47,8 +47,8 @@ public class characterMovement : MonoBehaviour
 		float vertical = Input.GetAxis("Mouse Y") * rotateSpeed;
 		//if (Mathf.Sign(vertical) == -1 && transform.rotation.x <= 80)
 		//	vertical = 0;
-		completeRot += vertical;
-		transform.Rotate(0, horizontal, 0);
+		completeRot += vertical/rotateSpeed;
+		transform.Rotate(0, horizontal /rotateSpeed, 0);
 		completeRot = Mathf.Clamp(completeRot, -80, 80);
 		cam.transform.localEulerAngles = new Vector3(-completeRot, 0f,0f);
 		//cam.transform.localEulerAngles = new Vector3(Mathf.Clamp(cam.transform.rotation.x, -80, 80), 0,0);
